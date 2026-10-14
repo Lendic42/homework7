@@ -8,14 +8,13 @@
 
 ```mermaid
 flowchart TD
-    A(["int main(void)"]) --> B["int n;"]
-    B --> C[/"printf(#quot;Введите число от 1 до 999: #quot;);"/]
-    C --> D[/"scanf(#quot;%d#quot;, &amp;n);"/]
-    D --> E{"switch (n % 100)"}
-    E -->|"case 11: case 12: case 13: case 14:"| F[/"printf(#quot;%d рублей#92;n#quot;, n);"/]
-    E -->|"default:"| G{"switch (n % 10)"}
-    G -->|"case 1:"| H[/"printf(#quot;%d рубль#92;n#quot;, n);"/]
-    G -->|"case 2: case 3: case 4:"| I[/"printf(#quot;%d рубля#92;n#quot;, n);"/]
+    B --> C[/"printf(#quot;Ввод числа #quot;);"/]
+    C --> D[/"Считыванеи"/]
+    D --> E{"Проверка послдних 2 цифр введеного числа"}
+    E -->|"Если 11, 12, 13 или 14:"| F[/"рублей"/]
+    E -->|"default:"| G{"Проверка последней цифры введеного числа"}
+    G -->|"если 1:"| H[/"рубль#92;n#quot;, n);"/]
+    G -->|"если 2, 3 или 4:"| I[/"рубля#92);"/]
     G -->|"default:"| J[/"printf(#quot;%d рублей#92;n#quot;, n);"/]
     H --> K["break;"]
     I --> K
